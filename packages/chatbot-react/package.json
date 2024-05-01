@@ -1,6 +1,6 @@
 {
   "name": "@seriouslag/chatbot-react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./index.js",
   "types": "./index.d.ts",
   "private": false,
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@mui/lab": "^5.0.0-alpha.170",
-    "@seriouslag/chatbot-api-core": "^0.0.7"
+    "@seriouslag/chatbot-api-core": "^0.0.8"
   },
   "peerDependencies": {
     "@mui/material": "5.x",
