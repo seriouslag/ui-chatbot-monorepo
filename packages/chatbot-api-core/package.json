@@ -1,6 +1,6 @@
 {
   "name": "@seriouslag/chatbot-api-core",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "main": "./index.js",
   "module": "./index.mjs",
   "typings": "./index.d.ts",
