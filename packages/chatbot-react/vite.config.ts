@@ -3,7 +3,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+
+// load the package.json file
+import pkg from './package.json';
+
+const deps = Object.keys(pkg.dependencies || {});
+const peerDeps = Object.keys(pkg.peerDependencies || {});
+
+const external = [...deps, ...peerDeps];
 
 export default defineConfig({
   root: __dirname,
@@ -11,8 +18,8 @@ export default defineConfig({
 
   plugins: [
     react(),
-    nxViteTsPaths(),
     dts({
+      aliasesExclude: [/^@seriouslag\/chatbot.*/],
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
@@ -43,7 +50,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external,
     },
   },
 

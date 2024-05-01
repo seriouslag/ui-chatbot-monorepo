@@ -6,6 +6,7 @@ import Slide from '@mui/material/Slide';
 import { useObservableState } from 'observable-hooks';
 import type { ChatService } from '@seriouslag/chatbot-api-core';
 import { ChatBox, type ChatBoxOptions } from './ChatBox';
+import './index.css';
 
 type ChatStatus = 'good' | 'warning' | 'error';
 

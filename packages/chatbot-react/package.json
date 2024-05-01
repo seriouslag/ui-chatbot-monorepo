@@ -11,7 +11,8 @@
     ".": {
       "import": "./index.mjs",
       "require": "./index.js"
-    }
+    },
+    "./css": "./style.css"
   },
   "dependencies": {
     "@mui/lab": "^5.0.0-alpha.170",
