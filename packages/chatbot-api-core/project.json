@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-api-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/chatbot-api-core/src",
+  "projectType": "library",
+  "tags": ["package"],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/chatbot-api-core",
+        "main": "packages/chatbot-api-core/src/index.ts",
+        "tsConfig": "packages/chatbot-api-core/tsconfig.lib.json",
+        "assets": ["packages/chatbot-api-core/*.md"]
+      }
+    }
+  }
+}

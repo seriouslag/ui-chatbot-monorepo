@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@seriouslag/chatbot-api-core": [
+        "packages/chatbot-api-core/src/index.ts"
+      ],
+      "@seriouslag/chatbot-api-ndjson": [
+        "packages/chatbot-api-ndjson/src/index.ts"
+      ],
+      "@seriouslag/chatbot-react": ["packages/chatbot-react/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@seriouslag/chatbot-api-ndjson",
+  "version": "0.0.1",
+  "dependencies": {
+    "@seriouslag/chatbot-api-core": "^0.0.1"
+  },
+  "peerDependencies": {
+    "ndjson-readablestream": "1.x",
+    "rxjs": "7.x",
+    "uuid": "9.x"
+  },
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

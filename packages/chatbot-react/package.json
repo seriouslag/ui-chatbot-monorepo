@@ -1,0 +1,29 @@
+{
+  "name": "chatbot-react",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@seriouslag/chatbot-api-core": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@mui/material": "5.x",
+    "@mui/icons-material": "5.x",
+    "dompurify": "3.x",
+    "observable-hooks": "4.x",
+    "react": ">18 <20",
+    "react-dom": ">18 <20",
+    "rxjs": "7.x"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/chatbot-react/src",
+  "projectType": "library",
+  "tags": ["package"],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/chatbot-react",
+        "main": "packages/chatbot-react/src/index.ts",
+        "tsConfig": "packages/chatbot-react/tsconfig.lib.json",
+        "assets": ["packages/chatbot-react/*.md"]
+      }
+    }
+  }
+}

@@ -1,5 +1,58 @@
 {
-  "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "nxCloudAccessToken": "MzE5MTgzZWUtZTJiMy00N2E3LThlMDEtZWUzNzFhNjEwNWIzfHJlYWQtd3JpdGU="
+  "defaultBase": "origin/main",
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": true
+    }
+  },
+  "extends": "nx/presets/npm.json",
+  "nxCloudAccessToken": "MzE5MTgzZWUtZTJiMy00N2E3LThlMDEtZWUzNzFhNjEwNWIzfHJlYWQtd3JpdGU=",
+  "targetDefaults": {
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "generatePackageJson": true
+      }
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/react": {
+      "library": {
+        "style": "tailwind",
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
+      },
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "tailwind"
+      }
+    }
+  }
 }
