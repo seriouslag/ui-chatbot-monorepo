@@ -14,9 +14,7 @@
       "dependsOn": ["^build"],
       "inputs": ["default", "^default"],
       "outputs": ["{options.outputPath}"],
-      "options": {
-        "generatePackageJson": true
-      }
+      "options": {}
     }
   },
   "plugins": [
