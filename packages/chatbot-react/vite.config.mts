@@ -1,18 +1,38 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+
+// load the package.json file
+import pkg from './package.json';
+
+const deps = Object.keys(pkg.dependencies || {});
+const peerDeps = Object.keys(pkg.peerDependencies || {});
+
+const external = [...deps, ...peerDeps];
+
+const outDir = '../../dist/packages/chatbot-react';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/chatbot-api-core',
+  cacheDir: '../../node_modules/.vite/packages/chatbot-react',
 
   plugins: [
-    nxViteTsPaths(),
+    react(),
     dts({
+      aliasesExclude: [/^@seriouslag\/chatbot.*/],
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: './*.md',
+          dest: path.join(__dirname, outDir),
+        },
+      ],
     }),
   ],
 
@@ -25,7 +45,7 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     emptyOutDir: true,
-    outDir: '../../dist/packages/chatbot-api-core',
+    outDir,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -33,7 +53,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'chatbot-api-core',
+      name: 'chatbot-react',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -41,18 +61,18 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [],
+      external,
     },
   },
 
   test: {
     globals: true,
-    environment: 'node',
+    environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/packages/chatbot-api-core',
+      reportsDirectory: '../../coverage/packages/chatbot-react',
       provider: 'v8',
     },
   },

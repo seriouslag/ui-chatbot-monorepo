@@ -3,16 +3,28 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+
+const outDir = '../../dist/packages/chatbot-api-core';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/chatbot-api-ndjson',
+  cacheDir: '../../node_modules/.vite/packages/chatbot-api-core',
 
   plugins: [
     nxViteTsPaths(),
     dts({
+      aliasesExclude: [/^@seriouslag\/chatbot.*/],
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: './*.md',
+          dest: path.join(__dirname, outDir),
+        },
+      ],
     }),
   ],
 
@@ -25,7 +37,7 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     emptyOutDir: true,
-    outDir: '../../dist/packages/chatbot-api-ndjson',
+    outDir,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -33,7 +45,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'chatbot-api-ndjson',
+      name: 'chatbot-api-core',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -52,7 +64,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/packages/chatbot-api-ndjson',
+      reportsDirectory: '../../coverage/packages/chatbot-api-core',
       provider: 'v8',
     },
   },
