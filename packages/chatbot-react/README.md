@@ -1,4 +1,4 @@
-# chatbot-react
+# @seriouslag/chatbot-react
 
 This library was generated with [Nx](https://nx.dev).
 

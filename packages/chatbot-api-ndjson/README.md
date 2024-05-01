@@ -1,4 +1,4 @@
-# chatbot-api-ndjson
+# @seriouslag/chatbot-api-ndjson
 
 This library was generated with [Nx](https://nx.dev).
 
