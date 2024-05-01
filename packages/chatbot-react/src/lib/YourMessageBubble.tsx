@@ -14,7 +14,7 @@ export const YourMessageBubble = ({
   const isStreaming = 'isStreaming' in message ? message.isStreaming : false;
   const parsedAnswer = useMemo(
     () => parseAnswerToHtml(message.message, isStreaming),
-    [message],
+    [message, isStreaming],
   );
 
   const sanitizedAnswerHtml = `${DOMPurify.sanitize(parsedAnswer.answerHtml)}${isStreaming ? '...' : ''}`;

@@ -57,7 +57,7 @@ export const ChatButton = ({ service, ...rest }: ChatButtonProps) => {
     if (lastMessage.role !== 'info') {
       setShowChat(true);
     }
-  }, [messages]);
+  }, [messages, scrollElementIntoView]);
 
   const chatInputId = 'chat-message-input';
 
