@@ -4,7 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import { LoadingButton } from '@mui/lab';
 import { type Message } from '@seriouslag/chatbot-api-core';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { MyMessageBubble } from './MyMessageBubble';
 import { YourMessageBubble } from './YourMessageBubble';
 
