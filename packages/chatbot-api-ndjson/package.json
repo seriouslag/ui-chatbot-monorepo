@@ -15,5 +15,18 @@
   "private": false,
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seriouslag/ui-chatbot-monorepo.git"
+  },
+  "author": "Landon Gavin (@seriouslag)",
+  "homepage": "https://github.com/seriouslag/ui-chatbot-monorepo",
+  "bugs": "https://github.com/seriouslag/ui-chatbot-monorepo/issues",
+  "keywords": [
+    "chatbot",
+    "react",
+    "ai"
+  ],
+  "license": "MIT"
 }

@@ -5,10 +5,23 @@
   "module": "./index.mjs",
   "typings": "./index.d.ts",
   "private": false,
+  "peerDependencies": {
+    "rxjs": "7.x"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
-    "rxjs": "7.x"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seriouslag/ui-chatbot-monorepo.git"
+  },
+  "author": "Landon Gavin (@seriouslag)",
+  "homepage": "https://github.com/seriouslag/ui-chatbot-monorepo",
+  "bugs": "https://github.com/seriouslag/ui-chatbot-monorepo/issues",
+  "keywords": [
+    "chatbot",
+    "react",
+    "ai"
+  ],
+  "license": "MIT"
 }
