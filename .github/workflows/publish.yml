@@ -34,7 +34,7 @@ jobs:
         shell: bash
 
       - name: Publish packages
-        run: npx nx --run-many --target=publish
+        run: npx nx run-many --target=publish --projects=tag:package --verbose
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
