@@ -22,8 +22,8 @@
     "@mui/icons-material": "5.x",
     "dompurify": "3.x",
     "observable-hooks": "4.x",
-    "react": ">18 <20",
-    "react-dom": ">18 <20",
+    "react": ">= 18 < 20",
+    "react-dom": ">= 18 < 20",
     "rxjs": "7.x"
   }
 }
