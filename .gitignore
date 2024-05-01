@@ -41,3 +41,5 @@ Thumbs.db
 .nx/cache
 
 *.local
+
+vite.config.mts.timestamp-*.mjs
