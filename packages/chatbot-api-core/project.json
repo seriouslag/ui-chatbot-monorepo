@@ -14,6 +14,16 @@
         "tsConfig": "packages/chatbot-api-core/tsconfig.lib.json",
         "assets": ["packages/chatbot-api-core/*.md"]
       }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npm publish dist/packages/chatbot-api-core --access public || echo Version already exists"
+          }
+        ]
+      }
     }
   }
 }
