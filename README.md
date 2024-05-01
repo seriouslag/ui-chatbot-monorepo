@@ -94,3 +94,17 @@ npm run build
 ## License
 
 MIT
+
+## Publish
+
+```bash
+nx release --skip-publish
+```
+
+on macos the generated package-lock.json is broken,
+Undo last commit, delete package-lock.json and run `npm install` to fix it.
+Commit, push, and push the tag of the new version
+
+```bash
+git push origin tag <version>
+```
