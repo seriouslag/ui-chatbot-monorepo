@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Fab from '@mui/material/Fab';
 import ChatIcon from '@mui/icons-material/Chat';
 import CloseIcon from '@mui/icons-material/Close';
@@ -33,16 +33,19 @@ export const ChatButton = ({ service, ...rest }: ChatButtonProps) => {
 
   const [isFirstRender, setIsFirstRender] = useState(true);
 
-  const scrollElementIntoView = (element: HTMLElement) => {
-    const firstRender = isFirstRender;
-    if (isFirstRender) {
-      setIsFirstRender(false);
-    }
-    // scroll to the new message
-    // if it's the first render, scroll instantly
-    // otherwise, scroll smoothly
-    element.scrollIntoView({ behavior: firstRender ? 'instant' : 'smooth' });
-  };
+  const scrollElementIntoView = useCallback(
+    (element: HTMLElement) => {
+      const firstRender = isFirstRender;
+      if (isFirstRender) {
+        setIsFirstRender(false);
+      }
+      // scroll to the new message
+      // if it's the first render, scroll instantly
+      // otherwise, scroll smoothly
+      element.scrollIntoView({ behavior: firstRender ? 'instant' : 'smooth' });
+    },
+    [isFirstRender, setIsFirstRender],
+  );
 
   useEffect(() => {
     const lastMessage = messages[messages.length - 1];
