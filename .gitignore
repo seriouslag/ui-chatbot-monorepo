@@ -42,4 +42,4 @@ Thumbs.db
 
 *.local
 
-vite.config.mts.timestamp-*.mjs
+vite.config.*.timestamp-*.mjs
