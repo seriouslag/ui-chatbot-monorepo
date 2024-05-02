@@ -1,3 +1,7 @@
+## 0.0.9 (2024-05-01)
+
+Fix TailwindCss import in chatbot-react
+
 ## 0.0.8 (2024-05-01)
 
 This was a version bump only, there were no code changes.
