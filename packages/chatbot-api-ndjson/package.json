@@ -1,8 +1,8 @@
 {
   "name": "@seriouslag/chatbot-api-ndjson",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "dependencies": {
-    "@seriouslag/chatbot-api-core": "^0.0.9"
+    "@seriouslag/chatbot-api-core": "^0.0.10"
   },
   "peerDependencies": {
     "ndjson-readablestream": "1.x",

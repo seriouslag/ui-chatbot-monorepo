@@ -1,7 +1,8 @@
 {
   "name": "@seriouslag/chatbot-react",
-  "version": "0.0.9",
-  "main": "./index.js",
+  "version": "0.0.10",
+  "main": "./index.cjs",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "private": false,
   "publishConfig": {
@@ -23,14 +24,14 @@
   "license": "MIT",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
+      "import": "./index.js",
+      "require": "./index.cjs"
     },
     "./css": "./style.css"
   },
   "dependencies": {
     "@mui/lab": "^5.0.0-alpha.170",
-    "@seriouslag/chatbot-api-core": "^0.0.9"
+    "@seriouslag/chatbot-api-core": "^0.0.10"
   },
   "peerDependencies": {
     "@mui/material": "5.x",
