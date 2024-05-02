@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import tailwindcss from 'tailwindcss';
 
 // load the package.json file
 import pkg from './package.json';
@@ -74,6 +75,15 @@ export default defineConfig({
     coverage: {
       reportsDirectory: '../../coverage/packages/chatbot-react',
       provider: 'v8',
+    },
+  },
+  css: {
+    postcss: {
+      plugins: [
+        tailwindcss({
+          config: path.resolve(__dirname, 'tailwind.config.js'),
+        }),
+      ],
     },
   },
 });

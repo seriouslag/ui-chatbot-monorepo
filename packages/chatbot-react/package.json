@@ -19,6 +19,7 @@
     "react",
     "ai"
   ],
+  "type": "module",
   "license": "MIT",
   "exports": {
     ".": {
