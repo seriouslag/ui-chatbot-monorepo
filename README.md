@@ -4,7 +4,7 @@ A simple chatbot component for React to interface with AI chats.
 It uses @MUI for some of the components.
 Internally uses tailwindcss for styling.
 
-[![npm version](https://badge.fury.io/js/%40seriouslag%2Fchatbot-react.svg)](https://badge.fury.io/js/%40seriouslag%2Fchatbot-react)
+[![npm version](https://badge.fury.io/js/@seriouslag%2Fchatbot-react.svg)](https://badge.fury.io/js/@seriouslag%2Fchatbot-react)
 
 ![Demo](https://github.com/seriouslag/ui-chatbot-monorepo/blob/main/images/demo.gif?raw=true)
 

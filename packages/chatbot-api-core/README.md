@@ -2,6 +2,8 @@
 
 This library was generated with [Nx](https://nx.dev).
 
+[![npm version](https://badge.fury.io/js/@seriouslag%2Fchatbot-api-core.svg)](https://badge.fury.io/js/@seriouslag%2Fchatbot-api-core)
+
 ## Building
 
 Run `nx build chatbot-api-core` to build the library.
