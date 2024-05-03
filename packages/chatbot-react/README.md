@@ -36,18 +36,19 @@ npm install @seriouslag/chatbot-react @seriouslag/chatbot-api-ndjson
 ## Usage
 
 ```jsx
-import React from 'react';
 import {
-  ChatButton,
+  NdJsonChatApiImpl,
   NdJsonChatService,
-  NdJsonChatApi,
 } from '@seriouslag/chatbot-api-ndjson';
+import { ChatButton } from '@seriouslag/chatbot-react';
 import { v4 } from 'uuid';
 // load the css
 import '@seriouslag/chatbot-react/css';
 
 // setup the API
-const chatApi = new NdJsonChatApi('http://localhost:3000/chat');
+const chatApi = new NdJsonChatApi({
+  baseUrl: 'http://localhost:3000/api/chat',
+});
 // setup the chat service
 const chatServiceInstance = new NdJsonChatService(chatApi, {
   defaultMessages: [

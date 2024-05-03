@@ -21,11 +21,13 @@ Currently only one service is available, the NdJsonChatService, which is a chat 
 
 The chat service is a simple interface that can be implemented to send messages to a chat server.
 
-- [ ] Split service and components into separate packages
+- [x] Split service and components into separate packages
 - [ ] Add Unit tests
 - [ ] Add example page
 - [ ] Remove MUI dependencies
 - [ ] Replace RXJS with native JS
+- [ ] Determine if using tailwindcss is good idea for a library
+- [ ] Split NdJsonChatApi Implementation into a separate package
 
 ## Installation
 
@@ -36,18 +38,19 @@ npm install @seriouslag/chatbot-react @seriouslag/chatbot-api-ndjson
 ## Usage
 
 ```jsx
-import React from 'react';
 import {
-  ChatButton,
+  NdJsonChatApiImpl,
   NdJsonChatService,
-  NdJsonChatApi,
 } from '@seriouslag/chatbot-api-ndjson';
+import { ChatButton } from '@seriouslag/chatbot-react';
 import { v4 } from 'uuid';
 // load the css
 import '@seriouslag/chatbot-react/css';
 
 // setup the API
-const chatApi = new NdJsonChatApi('http://localhost:3000/chat');
+const chatApi = new NdJsonChatApi({
+  baseUrl: 'http://localhost:3000/api/chat',
+});
 // setup the chat service
 const chatServiceInstance = new NdJsonChatService(chatApi, {
   defaultMessages: [
