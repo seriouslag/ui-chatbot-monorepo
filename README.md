@@ -48,7 +48,7 @@ import { v4 } from 'uuid';
 import '@seriouslag/chatbot-react/css';
 
 // setup the API
-const chatApi = new NdJsonChatApi({
+const chatApi = new NdJsonChatApiImpl({
   baseUrl: 'http://localhost:3000/api/chat',
 });
 // setup the chat service
