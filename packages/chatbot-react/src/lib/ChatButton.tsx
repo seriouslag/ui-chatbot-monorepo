@@ -120,7 +120,7 @@ export const ChatButton = ({ service, ...rest }: ChatButtonProps) => {
   return (
     <div className="fixed bottom-4 left-4">
       <Slide direction="right" in={showChat} unmountOnExit mountOnEnter>
-        <div className="m b-2">
+        <div className="mb-2">
           <ChatBox
             setShowChat={setShowChat}
             messages={messages}
