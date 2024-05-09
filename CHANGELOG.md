@@ -1,3 +1,14 @@
+## 0.0.12 (2024-05-09)
+
+
+### 🩹 Fixes
+
+- **example:** fix import and implementation of chatapi ([a66c2dd](https://github.com/seriouslag/ui-chatbot-monorepo/commit/a66c2dd))
+
+### ❤️  Thank You
+
+- Landon Gavin @seriouslag
+
 ## 0.0.11 (2024-05-03)
 
 This was a version bump only, there were no code changes.
