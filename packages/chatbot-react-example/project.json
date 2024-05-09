@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/chatbot-react-example/src",
   "projectType": "application",
-  "tags": [],
+  "tags": ["project"],
   "// targets": "to see all targets run: nx show project chatbot-react-example --web",
   "targets": {}
 }
